@@ -207,7 +207,26 @@
 
   function bootMermaid() {
     captureDiagrams();
-    window.renderMermaid();
+    if (window.mermaid) {
+      window.renderMermaid();
+      return;
+    }
+    // Mermaid may still be loading (or its CDN may be blocked). Wait briefly;
+    // if it never arrives, hide the raw source so no code block is shown.
+    var tries = 0;
+    var timer = setInterval(function () {
+      if (window.mermaid) {
+        clearInterval(timer);
+        window.renderMermaid();
+        return;
+      }
+      if (++tries > 25) {
+        clearInterval(timer);
+        document.querySelectorAll("pre.mermaid").forEach(function (node) {
+          node.style.display = "none";
+        });
+      }
+    }, 300);
   }
 
   if (document.readyState === "loading") {

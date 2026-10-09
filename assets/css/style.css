@@ -667,13 +667,12 @@ html[data-theme="dark"] .skillbar__track {
   margin-top: 16px;
 }
 
-/* ---------- Diagrams ---------- */
+/* ---------- Diagrams (borderless: part of the page, not an embedded frame) ---------- */
 .diagram {
-  margin: 22px 0 0;
-  padding: 20px;
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  background: var(--bg-elevated);
+  margin: 26px 0 0;
+  padding: 8px 0;
+  border: 0;
+  background: transparent;
   overflow: hidden;
 }
 
