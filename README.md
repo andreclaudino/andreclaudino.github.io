@@ -4,8 +4,10 @@ Personal profile / portfolio page for **André Claudino** — AI/ML Engineer · 
 Generative AI.
 
 - Live: <https://andreclaudino.com> · <https://andreclaudino.github.io>
-- Static site: plain HTML + CSS + JS (no build step), served by GitHub Pages.
-- Diagrams rendered client-side with [Mermaid](https://mermaid.js.org/).
+- Static site: a single self-contained HTML file (no build step, no external JS),
+  served by GitHub Pages.
+- Diagrams are pre-rendered [Mermaid](https://mermaid.js.org/) SVGs embedded inline
+  (light and dark variants), so they render instantly with no runtime dependency.
 - Design system inspired by the [typed-lm](https://neurono-ml.github.io/typed-lm/) skin:
   purple/blue gradients, Space Grotesk + Inter, animated stats, cards and scroll reveal,
   with light/dark themes.
