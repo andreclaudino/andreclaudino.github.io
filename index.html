@@ -1,23 +1,761 @@
-<html>
-    <head>
-        <title>André Claudino`s profile page</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-        <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.grey-pink.min.css" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>André Claudino — AI/ML Engineer · MLOps · Generative AI</title>
+  <meta name="description" content="André Claudino — AI/ML engineer building machine learning systems end to end: recommender systems at ~10M requests/min, fraud &amp; risk, pricing &amp; optimization, and generative-AI agents. Rust · Python · Kubernetes. Ph.D. in Computational Physics." />
+  <link rel="canonical" href="https://andreclaudino.com/" />
+  <meta name="author" content="André Claudino" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0b0b0f" media="(prefers-color-scheme: dark)" />
 
-    <body>
-        <img src="https://www.gravatar.com/avatar/d6d85a95672eb0a5ffab8dcfb91efe49?size=200">
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="André Claudino" />
+  <meta property="og:title" content="André Claudino — AI/ML Engineer · MLOps · Generative AI" />
+  <meta property="og:description" content="Machine learning systems end to end: recommender systems at ~10M requests/min, fraud &amp; risk, pricing &amp; optimization, and generative-AI agents. Rust · Python · Kubernetes." />
+  <meta property="og:url" content="https://andreclaudino.com/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="André Claudino — AI/ML Engineer · MLOps · Generative AI" />
+  <meta name="twitter:description" content="Machine learning systems end to end — from the model to the product. Rust · Python · Kubernetes." />
 
-        <span class="mdl-layout__title">Simple portfolio website</span>
-            <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="#">Portfolio</a>
-            <a class="mdl-navigation__link" href="#">Blog</a>
-            <a class="mdl-navigation__link" href="#">About</a>
-            <a class="mdl-navigation__link" href="#">Contact</a>
-        </nav>
-        
-    </body>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
-    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <script>
+    /* Set theme before first paint to avoid a flash. */
+    (function () {
+      try {
+        var t = localStorage.getItem("ac-theme");
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "André Claudino",
+    "url": "https://andreclaudino.com/",
+    "jobTitle": "AI/ML Engineer",
+    "email": "claudino@d2x.com.br",
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "State University of Rio de Janeiro (UERJ)" },
+      { "@type": "CollegeOrUniversity", "name": "PUC-Rio" }
+    ],
+    "knowsAbout": [
+      "Machine Learning", "MLOps", "Generative AI", "LLMs", "Recommender Systems",
+      "Kubernetes", "Rust", "Python", "Data Engineering", "FinOps"
+    ],
+    "sameAs": [
+      "https://github.com/andreclaudino",
+      "https://github.com/neurono-ml",
+      "https://www.linkedin.com/in/andreclaudino"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#top" aria-label="André Claudino — home">
+        <span class="brand__mark">AC</span>
+        <span class="brand__name">André Claudino</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Primary">
+        <a class="nav__link" href="#about">About</a>
+        <a class="nav__link" href="#skills">Skills</a>
+        <a class="nav__link" href="#experience">Experience</a>
+        <a class="nav__link" href="#projects">Open source</a>
+        <a class="nav__link" href="#education">Education</a>
+        <a class="nav__link" href="#contact">Contact</a>
+      </nav>
+
+      <div class="topbar__actions">
+        <button class="icon-btn nav-toggle" id="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch theme" title="Switch theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="top">
+
+    <!-- ================= HERO ================= -->
+    <section class="hero reveal" aria-labelledby="hero-title">
+      <span class="hero__announce">
+        <span class="hero__tag">Open to work</span>
+        Senior AI/ML · MLOps · Forward Deployed · Remote
+      </span>
+      <h1 class="hero__title" id="hero-title">Machine learning systems end to end — from the model to the product.</h1>
+      <p class="hero__subtitle">
+        I'm <strong>André Claudino</strong>, an AI/ML engineer who turns models into
+        reliable software: recommender systems, fraud &amp; risk, pricing and optimization,
+        and generative-AI agents that ship to production and keep working.
+        <strong>Ph.D. in Computational Physics</strong> · <strong>Rust</strong> ·
+        <strong>Python</strong> · <strong>Kubernetes</strong>.
+      </p>
+
+      <div class="hero__meta">
+        <span class="chip">📍 Rio de Janeiro, Brazil · Remote</span>
+        <span class="chip">🦀 Rust &amp; Python</span>
+        <span class="chip">☸️ Kubernetes / MLOps</span>
+        <span class="chip">🧠 LLMs &amp; agents</span>
+      </div>
+
+      <div class="btn-row">
+        <a class="btn btn--primary" href="#projects">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          See my work
+        </a>
+        <a class="btn btn--dark" href="https://github.com/andreclaudino" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.9 4.6 18.9 5 18.9 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+          GitHub
+        </a>
+        <a class="btn btn--secondary" href="https://www.linkedin.com/in/andreclaudino" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3V9zm6 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.4 8.65 21 11 21 14.1V21h-4v-6.1c0-1.45-.03-3.3-2-3.3-2 0-2.3 1.57-2.3 3.2V21H9V9z"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn btn--ghost" href="mailto:claudino@d2x.com.br">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          Email
+        </a>
+      </div>
+    </section>
+
+    <!-- ================= STATS ================= -->
+    <section class="stats reveal" aria-label="Highlights">
+      <div class="stat">
+        <div class="stat__value js-count" data-target="13" data-suffix="+">13+</div>
+        <span class="stat__label">years shipping software</span>
+      </div>
+      <div class="stat">
+        <div class="stat__value js-count" data-target="8">8</div>
+        <span class="stat__label">years ML &amp; MLOps in production</span>
+      </div>
+      <div class="stat">
+        <div class="stat__value js-count" data-target="10" data-suffix="M+">10M+</div>
+        <span class="stat__label">peak requests / minute</span>
+      </div>
+      <div class="stat">
+        <div class="stat__value js-count" data-target="87" data-prefix="−" data-suffix="%">−87%</div>
+        <span class="stat__label">infra &amp; inference cost cut</span>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section reveal" id="about" aria-labelledby="about-title">
+      <span class="section__eyebrow">About</span>
+      <h2 id="about-title">I build the engineering around the model</h2>
+      <p class="section__lead">
+        Over the last decade I've worked across the full ML lifecycle — from model design and
+        training to scalable serving, monitoring, drift detection and retraining. Models are
+        software: they need tests, observability, rollbacks and cost control, not just good
+        metrics. Below are the domains where I've shipped production systems.
+      </p>
+
+      <div class="grid grid--4" style="margin-top:26px">
+        <article class="card">
+          <span class="card__icon">🎯</span>
+          <h3 class="card__title">Recommender systems</h3>
+          <p>A platform serving peaks of ~10M requests/minute during live events, plus conversion-based candidate matching and personalization.</p>
+        </article>
+        <article class="card">
+          <span class="card__icon">🛡️</span>
+          <h3 class="card__title">Fraud, risk &amp; responsible gaming</h3>
+          <p>Churn, fraud, VIP early-detection, LTV and RFM models running in production for a regulated betting operator.</p>
+        </article>
+        <article class="card">
+          <span class="card__icon">📈</span>
+          <h3 class="card__title">Pricing &amp; optimization</h3>
+          <p>Freight optimization and automated real-estate appraisal with computer vision, shrinking the end-to-end workflow to minutes.</p>
+        </article>
+        <article class="card">
+          <span class="card__icon">🤖</span>
+          <h3 class="card__title">Generative AI</h3>
+          <p>Autonomous LLM agents that let executives query data lakes in natural language — report time from ~3 weeks to immediate, ~77% cost reduction.</p>
+        </article>
+      </div>
+
+      <!-- Architecture diagram -->
+      <div class="diagram reveal">
+        <pre class="mermaid">
+flowchart LR
+  src["Data sources&lt;br/&gt;events · APIs · DBs"]:::neutral
+  lake[("Data lakehouse&lt;br/&gt;Trino · Spark · S3")]:::data
+  feat["Feature store&lt;br/&gt;offline + online"]:::data
+  train["Training&lt;br/&gt;Argo · Kubeflow · MLflow"]:::ai
+  reg["Model registry&lt;br/&gt;versioned artifacts"]:::ai
+  serve["Serving&lt;br/&gt;K8s · Knative · Triton"]:::system
+  obs["Monitoring &amp; drift&lt;br/&gt;OpenTelemetry"]:::infra
+  client["Clients&lt;br/&gt;APIs · apps"]:::actor
+
+  src --&gt; lake --&gt; feat --&gt; train --&gt; reg --&gt; serve --&gt; client
+  serve --&gt; obs
+  obs -. retrain .-&gt; train
+
+  classDef actor fill:#fef3c7,stroke:#f59e0b,color:#78350f,stroke-width:1.5px
+  classDef system fill:#dbeafe,stroke:#2563eb,color:#0c4a6e,stroke-width:1.5px
+  classDef data fill:#d1fae5,stroke:#059669,color:#064e3b,stroke-width:1.5px
+  classDef ai fill:#ede9fe,stroke:#7c3aed,color:#3b0764,stroke-width:1.5px
+  classDef infra fill:#e4e4e7,stroke:#71717a,color:#18181b,stroke-width:1.5px
+        </pre>
+      </div>
+
+      <div class="statement reveal">
+        <p class="statement__text">Models are software.<br />They need tests, observability, rollbacks and cost control — not just good metrics.</p>
+      </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section class="section reveal" id="skills" aria-labelledby="skills-title">
+      <span class="section__eyebrow">Skills</span>
+      <h2 id="skills-title">What I work with</h2>
+      <p class="section__lead">
+        A decade of production ML and platform engineering, with a bias toward performance
+        and low latency. Rust, Python and Kubernetes are my daily tools.
+      </p>
+
+      <div class="skills-layout" style="margin-top:26px">
+        <div class="skills-bars">
+          <div class="skillbar">
+            <div class="skillbar__head"><span class="skillbar__name">Python</span><span class="skillbar__years">10 yrs · ML / data</span></div>
+            <div class="skillbar__track"><div class="skillbar__fill" data-value="100"></div></div>
+          </div>
+          <div class="skillbar">
+            <div class="skillbar__head"><span class="skillbar__name">Rust</span><span class="skillbar__years">8 yrs · low-latency services</span></div>
+            <div class="skillbar__track"><div class="skillbar__fill" data-value="80"></div></div>
+          </div>
+          <div class="skillbar">
+            <div class="skillbar__head"><span class="skillbar__name">Machine Learning</span><span class="skillbar__years">8 yrs</span></div>
+            <div class="skillbar__track"><div class="skillbar__fill" data-value="80"></div></div>
+          </div>
+          <div class="skillbar">
+            <div class="skillbar__head"><span class="skillbar__name">MLOps</span><span class="skillbar__years">8 yrs · CI/CT/CD for ML</span></div>
+            <div class="skillbar__track"><div class="skillbar__fill" data-value="80"></div></div>
+          </div>
+          <div class="skillbar">
+            <div class="skillbar__head"><span class="skillbar__name">Kubernetes</span><span class="skillbar__years">8 yrs · EKS · GKE · Knative</span></div>
+            <div class="skillbar__track"><div class="skillbar__fill" data-value="80"></div></div>
+          </div>
+          <div class="skillbar">
+            <div class="skillbar__head"><span class="skillbar__name">Spark &amp; Data Engineering</span><span class="skillbar__years">8 yrs · Trino · Kafka</span></div>
+            <div class="skillbar__track"><div class="skillbar__fill" data-value="80"></div></div>
+          </div>
+          <div class="skillbar">
+            <div class="skillbar__head"><span class="skillbar__name">LLMs &amp; Generative AI</span><span class="skillbar__years">5 yrs · RAG · agents</span></div>
+            <div class="skillbar__track"><div class="skillbar__fill" data-value="65"></div></div>
+          </div>
+          <div class="skillbar">
+            <div class="skillbar__head"><span class="skillbar__name">AWS · GCP · Terraform</span><span class="skillbar__years">4 yrs</span></div>
+            <div class="skillbar__track"><div class="skillbar__fill" data-value="45"></div></div>
+          </div>
+        </div>
+
+        <div class="skills-side">
+          <article class="card">
+            <h3 class="card__title">Machine Learning &amp; Generative AI</h3>
+            <p>LLMs (RAG, fine-tuning, prompt policy), autonomous agents, tool calling, MCP, NLP, computer vision, recommender systems, small language models and ONNX optimization.</p>
+            <div class="tags">
+              <span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">scikit-learn</span>
+              <span class="tag">XGBoost</span><span class="tag">LightGBM</span><span class="tag">ONNX</span>
+              <span class="tag">RAG</span><span class="tag">Agents</span><span class="tag">MCP</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3 class="card__title">MLOps &amp; Platform</h3>
+            <p>Enterprise MLOps infrastructure: Kubernetes, Knative, Argo Workflows, Kubeflow, CI/CT/CD for ML, shift-left validation, model versioning, monitoring and retraining loops.</p>
+            <div class="tags">
+              <span class="tag">Kubernetes</span><span class="tag">Argo</span><span class="tag">Knative</span>
+              <span class="tag">KEDA</span><span class="tag">MLflow</span><span class="tag">Triton</span>
+              <span class="tag">OpenTelemetry</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Data &amp; Cloud</h3>
+            <p>Lakehouse architectures, distributed computing and streaming, plus cloud-native scalability and FinOps across AWS, GCP and Azure.</p>
+            <div class="tags">
+              <span class="tag">Spark</span><span class="tag">Trino</span><span class="tag">Kafka</span>
+              <span class="tag">Databricks</span><span class="tag">AWS</span><span class="tag">GCP</span>
+              <span class="tag">Azure</span><span class="tag">Terraform</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3 class="card__title">Languages &amp; Optimization</h3>
+            <p>Rust, Go, Python, Scala and SQL, with a focus on ONNX optimization, low-latency API design and high-concurrency execution.</p>
+            <div class="tags">
+              <span class="tag">Rust</span><span class="tag">Go</span><span class="tag">Python</span>
+              <span class="tag">Scala</span><span class="tag">SQL</span><span class="tag">FinOps</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EXPERIENCE ================= -->
+    <section class="section reveal" id="experience" aria-labelledby="experience-title">
+      <span class="section__eyebrow">Experience</span>
+      <h2 id="experience-title">Where I've built things</h2>
+      <p class="section__lead">Employment and consulting engagements, most recent first.</p>
+
+      <div class="timeline" style="margin-top:26px">
+        <article class="timeline__item timeline__item--current">
+          <div class="timeline__head">
+            <span class="timeline__role">Senior Machine Learning Engineer</span>
+            <span class="timeline__company">The RealReal</span>
+            <span class="timeline__period">07/2025 – present</span>
+          </div>
+          <div class="timeline__place">Consulting · Remote</div>
+          <div class="timeline__body">
+            <ul>
+              <li>Owns pricing ML end to end at a luxury consignment marketplace: LightGBM price models (BPM/LPM/LDM).</li>
+              <li>Serving through Triton and a gRPC price-estimation API, with a Rust port of the serving path for performance.</li>
+              <li>MLOps on GCP Vertex AI, contrastive image embeddings for taxon understanding, and observability across the pricing stack.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline__item">
+          <div class="timeline__head">
+            <span class="timeline__role">AI/ML Consultant</span>
+            <span class="timeline__company">Offerpad</span>
+            <span class="timeline__period">04/2026 – 07/2026</span>
+          </div>
+          <div class="timeline__place">Consulting · Remote</div>
+          <div class="timeline__body">
+            <ul>
+              <li>Architected an automated real-estate appraisal system assisted by computer vision, integrating classical ML with visual LLMs (Gemini, Claude).</li>
+              <li>Codified expert underwriting knowledge into reproducible ML pipelines, minimizing individual bias.</li>
+              <li>Deployed and optimized models with ONNX, moving humans to a reviewer role and shrinking the end-to-end workflow to minutes.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline__item">
+          <div class="timeline__head">
+            <span class="timeline__role">AI/ML Consultant</span>
+            <span class="timeline__company">Paramount</span>
+            <span class="timeline__period">12/2025 – 03/2026</span>
+          </div>
+          <div class="timeline__place">Consulting · Rio de Janeiro</div>
+          <div class="timeline__body">
+            <ul>
+              <li>Designed the core MLOps architecture for distributed initiatives: recommendation engines, automated image tagging, preference learning and LLM-assisted search.</li>
+              <li>Integrated AI-assisted shift-left validation into CI/CD, building end-to-end testing agents that codify team knowledge.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline__item">
+          <div class="timeline__head">
+            <span class="timeline__role">Staff AI/MLOps Engineer</span>
+            <span class="timeline__company">Stellar Gaming (EstrelaBet)</span>
+            <span class="timeline__period">01/2024 – 04/2026</span>
+          </div>
+          <div class="timeline__body">
+            <ul>
+              <li>Autonomous GenAI analytics agent — an LLM agent letting C-levels query data lakes in natural language; report time from ~3 weeks to immediate, ~77% cost reduction.</li>
+              <li>High-volume recommendation &amp; betting — a recommender serving peaks of ~10M requests/minute during live events, plus an NLP "Tipster" platform for natural-language sports bets.</li>
+              <li>Cost optimization &amp; SLMs — trained domain-specific small language models and redesigned the Kubernetes ML platform, cutting infrastructure costs by ~87%.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline__item">
+          <div class="timeline__head">
+            <span class="timeline__role">Manager, Data Engineering &amp; ML</span>
+            <span class="timeline__company">Kognita Labs</span>
+            <span class="timeline__period">04/2022 – 10/2024</span>
+          </div>
+          <div class="timeline__body">
+            <ul>
+              <li>Architected a high-performance ML/Data platform on Trino, Argo and Kubernetes, achieving a 56% cloud infrastructure cost reduction via dynamic scaling and Spot instances.</li>
+              <li>Rewrote a legacy NLP inference service's multi-threaded serving engine in Rust and optimized models via ONNX for CPU: latency from 10 minutes to ~10ms, operating cost −87%.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline__item">
+          <div class="timeline__head">
+            <span class="timeline__role">Head of Data &amp; ML (Consultant)</span>
+            <span class="timeline__company">FlatWorld.co</span>
+            <span class="timeline__period">05/2022 – 03/2023</span>
+          </div>
+          <div class="timeline__body">
+            <ul>
+              <li>Built a Lakehouse (Trino/GCP) from scratch, consolidating fragmented spreadsheet data for real-time analytics.</li>
+              <li>Built explainable ML models generating transparent audit records for algorithmic recruitment, cutting inference match time from days to real-time.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline__item">
+          <div class="timeline__head">
+            <span class="timeline__role">Head of Data &amp; ML</span>
+            <span class="timeline__company">Talentify.io</span>
+            <span class="timeline__period">03/2021 – 03/2022</span>
+          </div>
+          <div class="timeline__body">
+            <ul>
+              <li>Created a platform for fine-tuning text foundation models on specific role domains and built conversion-based candidate matching models.</li>
+              <li>Re-architected monolithic role classification into event-driven, multi-model solutions on Kubernetes.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline__item">
+          <div class="timeline__head">
+            <span class="timeline__role">Machine Learning &amp; MLOps Manager</span>
+            <span class="timeline__company">B2W Digital</span>
+            <span class="timeline__period">08/2018 – 03/2021</span>
+          </div>
+          <div class="timeline__body">
+            <ul>
+              <li>Pioneered MLOps adoption within Latin America's largest e-commerce company, merging software engineering and data-science workflows.</li>
+              <li>Architected a high-performance freight optimization model and predictive systems that anticipate API failures ~10 minutes in advance.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline__item">
+          <div class="timeline__head">
+            <span class="timeline__role">Software Engineering Specialist</span>
+            <span class="timeline__company">Stone Pagamentos</span>
+            <span class="timeline__period">10/2017 – 02/2018</span>
+          </div>
+          <div class="timeline__body">
+            <ul>
+              <li>Spearheaded an architectural transformation for back-office big data processing, resolving cascading failures across on-premise nodes.</li>
+              <li>Containerized and orchestrated the environment with Marathon, enforcing strict CPU/memory boundaries for financial transaction processing.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline__item">
+          <div class="timeline__head">
+            <span class="timeline__role">Software Engineer Specialist</span>
+            <span class="timeline__company">B2W Digital</span>
+            <span class="timeline__period">04/2018 – 08/2018</span>
+          </div>
+        </article>
+
+        <article class="timeline__item">
+          <div class="timeline__head">
+            <span class="timeline__role">Graduate Coordinator — ML &amp; MLOps</span>
+            <span class="timeline__company">Unyleya</span>
+            <span class="timeline__period">06/2018 – 03/2019</span>
+          </div>
+          <div class="timeline__body">
+            <ul>
+              <li>Built, coordinated and managed the team of a Machine Learning and MLOps course focused on high-performance systems.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline__item">
+          <div class="timeline__head">
+            <span class="timeline__role">Software Development Analyst</span>
+            <span class="timeline__company">WebRadar</span>
+            <span class="timeline__period">07/2016 – 07/2017</span>
+          </div>
+          <div class="timeline__body">
+            <ul>
+              <li>Developed and improved a complex suite of applications and APIs for processing and visualizing big data for the telecommunications market.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline__item">
+          <div class="timeline__head">
+            <span class="timeline__role">Senior Software Engineer</span>
+            <span class="timeline__company">Tecgraf / PUC-Rio</span>
+            <span class="timeline__period">07/2013 – 03/2016</span>
+          </div>
+          <div class="timeline__body">
+            <ul>
+              <li>Planning, scheduling, demand management, customer contact and testing for large systems (e.g. Petrobras ERP).</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline__item">
+          <div class="timeline__head">
+            <span class="timeline__role">Software Engineering Technical Leader</span>
+            <span class="timeline__company">K2 Sistemas</span>
+            <span class="timeline__period">07/2013 – 03/2016</span>
+          </div>
+          <div class="timeline__body">
+            <ul>
+              <li>Led software development in spatial data, real-time demand and embedded software.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <!-- Eval / observability pipeline diagram -->
+      <div class="diagram reveal">
+        <pre class="mermaid">
+flowchart LR
+  offline["Offline eval&lt;br/&gt;golden sets · metrics"]:::ai
+  gate["CI/CT gates&lt;br/&gt;quality thresholds"]:::system
+  canary["Shadow / canary&lt;br/&gt;traffic split"]:::system
+  online["Online monitoring&lt;br/&gt;latency · cost · quality"]:::infra
+  drift["Drift detection&lt;br/&gt;data &amp; concept"]:::infra
+  retrain["Retrain trigger&lt;br/&gt;automated pipeline"]:::ai
+
+  offline --&gt; gate --&gt; canary --&gt; online --&gt; drift --&gt; retrain
+  retrain -. feedback .-&gt; offline
+
+  classDef system fill:#dbeafe,stroke:#2563eb,color:#0c4a6e,stroke-width:1.5px
+  classDef ai fill:#ede9fe,stroke:#7c3aed,color:#3b0764,stroke-width:1.5px
+  classDef infra fill:#e4e4e7,stroke:#71717a,color:#18181b,stroke-width:1.5px
+        </pre>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section class="section reveal" id="projects" aria-labelledby="projects-title">
+      <span class="section__eyebrow">Open source</span>
+      <h2 id="projects-title">Things I build in the open</h2>
+      <p class="section__lead">
+        Rust-first projects across ML, LLM systems, Kubernetes tooling and developer agents.
+        Most live under the <a href="https://github.com/neurono-ml" target="_blank" rel="noopener">neurono-ml</a> org.
+      </p>
+
+      <div class="grid grid--3" style="margin-top:26px">
+        <article class="project">
+          <div class="project__top">
+            <span class="project__icon">🧭</span>
+            <span class="project__name">typed-lm</span>
+          </div>
+          <p class="project__desc">Single-forward-pass semantic routing in Rust: turns dense LLMs into a typed decision API — booleans, choices and scores instead of generated text. Built on Candle, with LoRA/QLoRA training and FP8/FP4 quantization.</p>
+          <div class="tags"><span class="tag">Rust</span><span class="tag">LLMs</span><span class="tag">Candle</span></div>
+          <div class="project__links">
+            <a class="project__link" href="https://github.com/neurono-ml/typed-lm" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__top">
+            <span class="project__icon">🧪</span>
+            <span class="project__name">sciencekit</span>
+          </div>
+          <p class="project__desc">A classical machine learning library, similar to scikit-learn, written and optimized in Rust. Zero-copy APIs, pluggable execution (CPU/SIMD/BLAS/GPU) and native out-of-core processing, with Python bindings via PyO3.</p>
+          <div class="tags"><span class="tag">Rust</span><span class="tag">ML</span><span class="tag">PyO3</span></div>
+          <div class="project__links">
+            <a class="project__link" href="https://github.com/neurono-ml/sciencekit" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="project__link" href="https://neurono-ml.github.io/sciencekit/" target="_blank" rel="noopener">Docs ↗</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__top">
+            <span class="project__icon">📦</span>
+            <span class="project__name">serde-onnx</span>
+          </div>
+          <p class="project__desc">Serde-first ONNX intermediate representation in Rust with a generated protobuf codec and typed ai.onnx.ml operator bindings. Pure Rust, no C/C++ dependency.</p>
+          <div class="tags"><span class="tag">Rust</span><span class="tag">ONNX</span><span class="tag">Serde</span></div>
+          <div class="project__links">
+            <a class="project__link" href="https://github.com/neurono-ml/serde-onnx" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="project__link" href="https://crates.io/crates/serde-onnx" target="_blank" rel="noopener">crates.io ↗</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__top">
+            <span class="project__icon">☸️</span>
+            <span class="project__name">k8s-maestro</span>
+          </div>
+          <p class="project__desc">Type-safe Kubernetes workflow orchestration in Rust. Define multi-step workflows with a fluent API: DAG dependencies, parallelism, retries, checkpointing, RBAC and network policies.</p>
+          <div class="tags"><span class="tag">Rust</span><span class="tag">Kubernetes</span><span class="tag">MLOps</span></div>
+          <div class="project__links">
+            <a class="project__link" href="https://github.com/neurono-ml/k8s-maestro" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="project__link" href="https://crates.io/crates/k8s-maestro" target="_blank" rel="noopener">crates.io ↗</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__top">
+            <span class="project__icon">🐇</span>
+            <span class="project__name">rabbitmq_streamer</span>
+          </div>
+          <p class="project__desc">Rust library wrapping RabbitMQ publish/consume behind streams: high-level APIs, manual acks, automatic reconnection and exponential backoff, tested against real brokers.</p>
+          <div class="tags"><span class="tag">Rust</span><span class="tag">RabbitMQ</span><span class="tag">Streams</span></div>
+          <div class="project__links">
+            <a class="project__link" href="https://github.com/neurono-ml/rabbitmq_streamer" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="project__link" href="https://crates.io/crates/rabbitmq_streamer" target="_blank" rel="noopener">crates.io ↗</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__top">
+            <span class="project__icon">🥒</span>
+            <span class="project__name">cucumber-openspec</span>
+          </div>
+          <p class="project__desc">Deterministic converter from OpenSpec spec.md behavior specifications into Cucumber/Gherkin .feature files — in 80 languages, with zero AI. Keeps specs and tests in sync via CI.</p>
+          <div class="tags"><span class="tag">BDD</span><span class="tag">Cucumber</span><span class="tag">TypeScript</span></div>
+          <div class="project__links">
+            <a class="project__link" href="https://github.com/neurono-ml/cucumber-openspec" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__top">
+            <span class="project__icon">🧰</span>
+            <span class="project__name">kind-testcontainers-skill</span>
+          </div>
+          <p class="project__desc">AI-agent skill that scaffolds ephemeral Kubernetes integration tests with Testcontainers and Kind: isolated cluster per test, kubeconfig port-mapping and CI templates across 7 languages.</p>
+          <div class="tags"><span class="tag">Kubernetes</span><span class="tag">Testing</span><span class="tag">AI agents</span></div>
+          <div class="project__links">
+            <a class="project__link" href="https://github.com/neurono-ml/kind-testcontainers-skill" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__top">
+            <span class="project__icon">🦀</span>
+            <span class="project__name">rust-dev-agents &amp; leptos-coder</span>
+          </div>
+          <p class="project__desc">OpenCode agents and skills for Rust development — ML/DataFusion, Actix-web APIs, Tonic gRPC, Leptos web apps, Kubernetes deployment and Docker optimization.</p>
+          <div class="tags"><span class="tag">Rust</span><span class="tag">AI agents</span><span class="tag">Leptos</span></div>
+          <div class="project__links">
+            <a class="project__link" href="https://github.com/andreclaudino/rust-dev-agents" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="project__link" href="https://github.com/andreclaudino/leptos-coder" target="_blank" rel="noopener">Leptos ↗</a>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project__top">
+            <span class="project__icon">🎙️</span>
+            <span class="project__name">IndieSync</span>
+          </div>
+          <p class="project__desc">AI-assisted platform that turns a manuscript into a full-cast audiobook/podcast with consistent character voices, SFX and music. Event-driven pipeline (Rust + Python, Qwen3-TTS), broadcast-ready mastering. Private beta.</p>
+          <div class="tags"><span class="tag">Rust</span><span class="tag">Python</span><span class="tag">Audio AI</span></div>
+          <div class="project__links">
+            <a class="project__link" href="https://indie-sync.pages.dev/" target="_blank" rel="noopener">Site ↗</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Agent architecture diagram -->
+      <div class="diagram reveal">
+        <pre class="mermaid">
+flowchart LR
+  user["Executive&lt;br/&gt;natural language"]:::actor
+  agent["Analytics agent&lt;br/&gt;LLM orchestrator&lt;br/&gt;tool calling · MCP"]:::ai
+  sql["SQL / Trino&lt;br/&gt;query tool"]:::tool
+  rag["RAG&lt;br/&gt;vector store"]:::tool
+  code["Python&lt;br/&gt;analysis tool"]:::tool
+  guard["Guardrails&lt;br/&gt;access · cost · safety"]:::infra
+  lake[("Data lake")]:::data
+  answer["Answer + charts&lt;br/&gt;auditable"]:::actor
+
+  user --&gt; agent
+  agent --&gt; sql --&gt; lake
+  agent --&gt; rag
+  agent --&gt; code
+  sql --&gt; guard
+  rag --&gt; guard
+  code --&gt; guard
+  guard --&gt; answer
+
+  classDef actor fill:#fef3c7,stroke:#f59e0b,color:#78350f,stroke-width:1.5px
+  classDef ai fill:#ede9fe,stroke:#7c3aed,color:#3b0764,stroke-width:1.5px
+  classDef tool fill:#fee2e2,stroke:#ef4444,color:#7f1d1d,stroke-width:1.5px
+  classDef data fill:#d1fae5,stroke:#059669,color:#064e3b,stroke-width:1.5px
+  classDef infra fill:#e4e4e7,stroke:#71717a,color:#18181b,stroke-width:1.5px
+        </pre>
+      </div>
+    </section>
+
+    <!-- ================= EDUCATION ================= -->
+    <section class="section reveal" id="education" aria-labelledby="education-title">
+      <span class="section__eyebrow">Education</span>
+      <h2 id="education-title">Academic background</h2>
+      <p class="section__lead">A physics foundation with a focus on artificial intelligence and symbolic computation, plus ongoing specialization in data and AI engineering.</p>
+
+      <div class="grid grid--2" style="margin-top:26px">
+        <article class="card">
+          <span class="card__icon">🎓</span>
+          <h3 class="card__title">Ph.D. in Computational Physics</h3>
+          <p>AI &amp; Symbolic Computation — State University of Rio de Janeiro (UERJ), 2013–2016.</p>
+        </article>
+        <article class="card">
+          <span class="card__icon">🔬</span>
+          <h3 class="card__title">M.Sc. in Computational Physics</h3>
+          <p>Symbolic NLP Frameworks — UERJ, 2010–2012.</p>
+        </article>
+        <article class="card">
+          <span class="card__icon">🧮</span>
+          <h3 class="card__title">B.Sc. in Physics</h3>
+          <p>Distributed Big Data Research — UERJ, 2007–2010.</p>
+        </article>
+        <article class="card">
+          <span class="card__icon">📚</span>
+          <h3 class="card__title">Postgraduate Specialization in Data Science</h3>
+          <p>PUC-Rio, 2025–2026.</p>
+        </article>
+        <article class="card">
+          <span class="card__icon">🧠</span>
+          <h3 class="card__title">MBA in AI Engineering</h3>
+          <p>Full Cycle, 2025–2026.</p>
+        </article>
+        <article class="card">
+          <span class="card__icon">🏗️</span>
+          <h3 class="card__title">MBA in Software and Systems Architecture</h3>
+          <p>Full Cycle, 2025–2026.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="section reveal" id="contact" aria-labelledby="contact-title">
+      <div class="cta">
+        <h2 class="cta__title" id="contact-title">Let's build reliable AI systems</h2>
+        <p>
+          I'm open to senior AI/ML, MLOps and forward-deployed engineering roles.
+          If you need someone who can take a model from a notebook to production and keep it
+          healthy, let's talk.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="mailto:claudino@d2x.com.br">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+            claudino@d2x.com.br
+          </a>
+          <a class="btn btn--secondary" href="https://www.linkedin.com/in/andreclaudino" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn btn--ghost" href="https://github.com/andreclaudino" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year">2026</span> André Claudino · AI/ML Engineer</span>
+      <span class="footer__links">
+        <a href="https://github.com/andreclaudino" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://github.com/neurono-ml" target="_blank" rel="noopener">neurono-ml</a>
+        <a href="https://www.linkedin.com/in/andreclaudino" target="_blank" rel="noopener">LinkedIn</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
 </html>
