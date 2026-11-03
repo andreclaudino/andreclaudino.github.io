@@ -52,6 +52,10 @@ The page CSS lives in a `<style>` block and the page JS in a `<script>` block in
   `@graph` (Person, WebSite, ProfilePage, ItemList of articles).
 - `robots.txt` + `sitemap.xml`; submitted to Google Search Console
   (verification: `google-site-verification` meta tag and `google29e18863a8e69344.html`).
+- Search Console property is linked to GA4 (Admin → Product links → Search Console links),
+  so Search queries can be analysed next to on-site behaviour.
+- Bing Webmaster Tools: site imported from Search Console, sitemap processing; new URLs are
+  pushed through IndexNow on every change (`scripts/indexnow-submit.sh`).
 - Regenerate social assets with `python3 scripts/make-social-assets.py` after changing the
   headline or brand colours.
 
