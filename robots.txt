@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Build helper, not content
+Disallow: /scripts/
+
+Sitemap: https://andreclaudino.com/sitemap.xml

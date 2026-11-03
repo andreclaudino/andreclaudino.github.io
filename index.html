@@ -6,24 +6,45 @@
   <title>André Claudino · AI/ML Engineer · MLOps · Generative AI</title>
   <meta name="description" content="André Claudino, consultant, author, speaker, professor and creator of advanced software. Senior AI/ML, backend and MLOps engineer building generative AI, machine learning, data and cloud systems end to end, from prototype to production at scale. Rust · Python · Kubernetes. Ph.D. in Computational Physics." />
   <link rel="canonical" href="https://andreclaudino.com/" />
+  <link rel="alternate" hreflang="en" href="https://andreclaudino.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://andreclaudino.com/" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
   <meta name="author" content="André Claudino" />
+  <meta name="google-site-verification" content="292mduwAueVsBA1PfSaZYf0FO817oGxtYTHn1RV4Vu8" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1" />
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0b0b0f" media="(prefers-color-scheme: dark)" />
 
   <!-- Open Graph / Twitter -->
   <meta property="og:type" content="profile" />
   <meta property="og:site_name" content="André Claudino" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="André Claudino · AI/ML Engineer · MLOps · Generative AI" />
   <meta property="og:description" content="Consultant, author, speaker, professor and creator of advanced software. Senior AI/ML, backend and MLOps engineer building generative AI, machine learning, data and cloud systems end to end. Rust · Python · Kubernetes." />
   <meta property="og:url" content="https://andreclaudino.com/" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:image" content="https://andreclaudino.com/assets/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="André Claudino — AI/ML, backend and MLOps engineer: I turn AI and data into reliable products." />
+  <meta property="profile:first_name" content="André" />
+  <meta property="profile:last_name" content="Claudino" />
+  <meta property="profile:username" content="andreclaudino" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="André Claudino · AI/ML Engineer · MLOps · Generative AI" />
   <meta name="twitter:description" content="Machine learning systems end to end, from the model to the product. Rust · Python · Kubernetes." />
+  <meta name="twitter:image" content="https://andreclaudino.com/assets/og-image.png" />
+  <meta name="twitter:image:alt" content="André Claudino — AI/ML, backend and MLOps engineer." />
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://www.google-analytics.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <style>
 /* ==========================================================================
@@ -1071,10 +1092,78 @@ html[data-theme="dark"] .project__link {
   }
 }
 
+/* ---------- Cookie consent banner ---------- */
+.consent {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%) translateY(0);
+  width: min(880px, calc(100% - 32px));
+  z-index: 120;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 20px;
+  padding: 18px 22px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-strong);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  font-size: 14px;
+  color: var(--fg-muted);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.consent[hidden] {
+  display: none;
+}
+
+.consent.is-hiding {
+  opacity: 0;
+  transform: translateX(-50%) translateY(12px);
+}
+
+.consent__text {
+  flex: 1 1 340px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.consent__text strong {
+  color: var(--fg);
+}
+
+.consent__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.consent__link {
+  font-size: 13px;
+  color: var(--fg-subtle);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.btn--sm {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .consent__actions {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
 /* ---------- Print ---------- */
 @media print {
   .topbar,
   .btn-row,
+  .consent,
   .footer__links {
     display: none;
   }
@@ -1102,26 +1191,212 @@ html[data-theme="dark"] .project__link {
     })();
   </script>
 
+  <!-- =================== Analytics (Google Analytics 4) ===================
+       Consent Mode v2: everything is denied until the visitor opts in through
+       the cookie banner. No cookie is written and no hit is sent before that.
+       Replace GA4_ID in one place to point at another property. -->
+  <script>
+    (function () {
+      window.GA4_ID = "G-N0STBT71P9";
+
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+
+      var stored = null;
+      try { stored = localStorage.getItem("ac-consent"); } catch (e) {}
+      var granted = stored === "granted";
+
+      gtag("consent", "default", {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied",
+        functionality_storage: "granted",
+        security_storage: "granted",
+        wait_for_update: 500
+      });
+      gtag("set", "ads_data_redaction", true);
+      gtag("set", "url_passthrough", true);
+
+      if (granted) {
+        gtag("consent", "update", {
+          ad_storage: "granted",
+          ad_user_data: "granted",
+          ad_personalization: "granted",
+          analytics_storage: "granted"
+        });
+      }
+
+      gtag("js", new Date());
+      gtag("config", window.GA4_ID, { anonymize_ip: true, send_page_view: true });
+
+      /* Injects gtag.js only after consent, so a rejecting visitor downloads nothing. */
+      window.loadAnalytics = function () {
+        if (window.__gaLoaded || !window.GA4_ID || window.GA4_ID.indexOf("X") !== -1) return;
+        window.__gaLoaded = true;
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(window.GA4_ID);
+        document.head.appendChild(s);
+      };
+      if (granted) window.loadAnalytics();
+    })();
+  </script>
+  <noscript>
+    <img src="https://www.googletagmanager.com/ns.html?id=G-N0STBT71P9" height="1" width="1" style="display:none" alt="" />
+  </noscript>
+
+  <!-- ================= Structured data (schema.org) ================= -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "André Claudino",
-    "url": "https://andreclaudino.com/",
-    "jobTitle": "AI/ML Engineer",
-    "email": "claudino@d2x.com.br",
-    "alumniOf": [
-      { "@type": "CollegeOrUniversity", "name": "State University of Rio de Janeiro (UERJ)" },
-      { "@type": "CollegeOrUniversity", "name": "PUC-Rio" }
-    ],
-    "knowsAbout": [
-      "Machine Learning", "MLOps", "Generative AI", "LLMs", "Recommender Systems",
-      "Kubernetes", "Rust", "Python", "Data Engineering", "FinOps"
-    ],
-    "sameAs": [
-      "https://github.com/andreclaudino",
-      "https://github.com/neurono-ml",
-      "https://www.linkedin.com/in/andreclaudino"
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://andreclaudino.com/#person",
+        "name": "André Claudino",
+        "givenName": "André",
+        "familyName": "Claudino",
+        "url": "https://andreclaudino.com/",
+        "mainEntityOfPage": { "@id": "https://andreclaudino.com/#profilepage" },
+        "image": "https://andreclaudino.com/assets/og-image.png",
+        "description": "Senior AI/ML, backend and MLOps engineer building generative AI, machine learning, data and cloud systems end to end, from prototype to production at scale.",
+        "jobTitle": "AI/ML Engineer",
+        "email": "claudino@d2x.com.br",
+        "worksFor": { "@type": "Organization", "name": "D2X" },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Rio de Janeiro",
+          "addressCountry": "BR"
+        },
+        "knowsLanguage": ["pt-BR", "en"],
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "State University of Rio de Janeiro (UERJ)" },
+          { "@type": "CollegeOrUniversity", "name": "PUC-Rio" }
+        ],
+        "hasCredential": {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "degree",
+          "name": "Ph.D. in Computational Physics"
+        },
+        "knowsAbout": [
+          "Machine Learning", "MLOps", "Generative AI", "Large Language Models",
+          "AI agents", "Recommender Systems", "Retrieval-Augmented Generation",
+          "Kubernetes", "Rust", "Python", "Data Engineering", "Observability", "FinOps"
+        ],
+        "sameAs": [
+          "https://github.com/andreclaudino",
+          "https://github.com/neurono-ml",
+          "https://www.linkedin.com/in/andreclaudino",
+          "https://medium.com/@andrelgcclaudino"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://andreclaudino.com/#website",
+        "url": "https://andreclaudino.com/",
+        "name": "André Claudino",
+        "description": "André Claudino — AI/ML, backend and MLOps engineer. Articles, open source and experience.",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://andreclaudino.com/#person" }
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://andreclaudino.com/#profilepage",
+        "url": "https://andreclaudino.com/",
+        "name": "André Claudino · AI/ML Engineer · MLOps · Generative AI",
+        "isPartOf": { "@id": "https://andreclaudino.com/#website" },
+        "mainEntity": { "@id": "https://andreclaudino.com/#person" },
+        "inLanguage": "en",
+        "primaryImageOfPage": { "@type": "ImageObject", "url": "https://andreclaudino.com/assets/og-image.png" }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://andreclaudino.com/#articles",
+        "name": "Articles by André Claudino",
+        "itemListOrder": "https://schema.org/ItemListOrderDescending",
+        "numberOfItems": 7,
+        "itemListElement": [
+          {
+            "@type": "ListItem", "position": 1,
+            "item": {
+              "@type": "BlogPosting",
+              "headline": "Model Registry & Lineage: The Control Plane for Shipping Models",
+              "datePublished": "2026-10",
+              "inLanguage": "en",
+              "author": { "@id": "https://andreclaudino.com/#person" },
+              "url": "https://www.linkedin.com/pulse/model-registry-lineage-control-plane-shipping-models-andr%C3%A9-claudino-liwef/",
+              "sameAs": "https://medium.com/@andrelgcclaudino/model-registry-lineage-the-control-plane-for-shipping-models-4fe692e5a862"
+            }
+          },
+          {
+            "@type": "ListItem", "position": 2,
+            "item": {
+              "@type": "BlogPosting",
+              "headline": "ML Cost Optimization: The FinOps Levers That Actually Move the Bill",
+              "datePublished": "2026-10",
+              "inLanguage": "en",
+              "author": { "@id": "https://andreclaudino.com/#person" },
+              "url": "https://www.linkedin.com/pulse/ml-cost-optimization-finops-levers-actually-move-bill-andr%C3%A9-claudino-vvfdf/"
+            }
+          },
+          {
+            "@type": "ListItem", "position": 3,
+            "item": {
+              "@type": "BlogPosting",
+              "headline": "AIOps Observability: Making AI Systems Explain Themselves in Production",
+              "datePublished": "2026-10",
+              "inLanguage": "en",
+              "author": { "@id": "https://andreclaudino.com/#person" },
+              "url": "https://www.linkedin.com/pulse/aiops-observability-making-ai-systems-explain-andr%C3%A9-claudino-injif/"
+            }
+          },
+          {
+            "@type": "ListItem", "position": 4,
+            "item": {
+              "@type": "BlogPosting",
+              "headline": "Kubernetes ML Platform: Orchestration Patterns That Keep the Bill Down",
+              "datePublished": "2026-10",
+              "inLanguage": "en",
+              "author": { "@id": "https://andreclaudino.com/#person" },
+              "url": "https://www.linkedin.com/pulse/kubernetes-ml-platform-orchestration-patterns-keep-bill-claudino-1er3c/"
+            }
+          },
+          {
+            "@type": "ListItem", "position": 5,
+            "item": {
+              "@type": "BlogPosting",
+              "headline": "LLM Agents in Production: Evals, Cost, and the Failure Modes Nobody Demos",
+              "datePublished": "2026-10",
+              "inLanguage": "en",
+              "author": { "@id": "https://andreclaudino.com/#person" },
+              "url": "https://www.linkedin.com/pulse/llm-agents-production-evals-cost-failure-modes-nobody-andr%C3%A9-claudino-l5xvf/"
+            }
+          },
+          {
+            "@type": "ListItem", "position": 6,
+            "item": {
+              "@type": "BlogPosting",
+              "headline": "Rust for Machine Learning: Why It's Time (and Where It Wins)",
+              "datePublished": "2026-10",
+              "inLanguage": "en",
+              "author": { "@id": "https://andreclaudino.com/#person" },
+              "url": "https://www.linkedin.com/pulse/rust-machine-learning-why-its-time-where-wins-andr%C3%A9-claudino-swbxf/"
+            }
+          },
+          {
+            "@type": "ListItem", "position": 7,
+            "item": {
+              "@type": "BlogPosting",
+              "headline": "The MLOps Production Checklist: What an MLOps Engineer Actually Ships",
+              "datePublished": "2026-10",
+              "inLanguage": "en",
+              "author": { "@id": "https://andreclaudino.com/#person" },
+              "url": "https://www.linkedin.com/pulse/mlops-production-checklist-what-engineer-actually-ships-claudino-6htaf/"
+            }
+          }
+        ]
+      }
     ]
   }
   </script>
@@ -1967,6 +2242,105 @@ flowchart LR
       </span>
     </div>
   </footer>
+
+  <div class="consent" id="consent" role="dialog" aria-labelledby="consent-text" aria-live="polite" hidden>
+    <p class="consent__text" id="consent-text">
+      <strong>Analytics cookies.</strong> I use Google Analytics to see which articles and
+      sections people actually read. Nothing is collected until you accept, and the data is
+      anonymised — no ads, no profiling, no data sold.
+    </p>
+    <div class="consent__actions">
+      <button type="button" class="btn btn--ghost btn--sm" data-consent="denied">Reject</button>
+      <button type="button" class="btn btn--primary btn--sm" data-consent="granted">Accept</button>
+      <a class="consent__link" href="/privacy.html">Privacy</a>
+    </div>
+  </div>
+
+  <script>
+    /* Cookie consent (Consent Mode v2) + lightweight engagement tracking. */
+    (function () {
+      "use strict";
+
+      var KEY = "ac-consent";
+      var banner = document.getElementById("consent");
+
+      function read() {
+        try { return localStorage.getItem(KEY); } catch (e) { return null; }
+      }
+
+      function store(value) {
+        try { localStorage.setItem(KEY, value); } catch (e) {}
+      }
+
+      function apply(value) {
+        if (typeof window.gtag === "function") {
+          window.gtag("consent", "update", {
+            ad_storage: value,
+            ad_user_data: value,
+            ad_personalization: value,
+            analytics_storage: value
+          });
+        }
+        if (value === "granted" && typeof window.loadAnalytics === "function") {
+          window.loadAnalytics();
+        }
+      }
+
+      function hide() {
+        if (!banner) return;
+        banner.classList.add("is-hiding");
+        window.setTimeout(function () { banner.hidden = true; }, 250);
+      }
+
+      if (banner) {
+        banner.addEventListener("click", function (event) {
+          var btn = event.target.closest("[data-consent]");
+          if (!btn) return;
+          var value = btn.getAttribute("data-consent");
+          store(value);
+          apply(value);
+          hide();
+          if (typeof window.gtag === "function") {
+            window.gtag("event", "consent_choice", { choice: value });
+          }
+        });
+
+        if (read() === null) {
+          window.setTimeout(function () { banner.hidden = false; }, 1200);
+        }
+      }
+
+      /* Outbound + engagement events for Google Analytics. */
+      document.addEventListener("click", function (event) {
+        var link = event.target.closest && event.target.closest("a[href]");
+        if (!link || typeof window.gtag !== "function") return;
+
+        var href = link.getAttribute("href") || "";
+        if (/^mailto:/i.test(href)) {
+          window.gtag("event", "contact_click", { method: "email" });
+          return;
+        }
+        if (href.indexOf("http") !== 0) return;
+
+        var url;
+        try { url = new URL(href); } catch (e) { return; }
+        if (url.hostname === window.location.hostname) return;
+
+        var inArticles = !!link.closest("#articles");
+        var payload = {
+          link_domain: url.hostname,
+          link_url: url.href,
+          link_text: (link.textContent || "").trim().slice(0, 80)
+        };
+        var card = link.closest("article");
+        if (card) {
+          var title = card.querySelector(".card__title");
+          if (title) payload.article_title = title.textContent.trim();
+        }
+        window.gtag("event", inArticles ? "article_click" : "click_outbound", payload);
+      }, true);
+    })();
+  </script>
 
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
   <script src="assets/vendor/mermaid.min.js"></script>

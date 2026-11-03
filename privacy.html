@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy &amp; cookies · André Claudino</title>
+  <meta name="description" content="How andreclaudino.com handles data: Google Analytics 4 behind consent, anonymised IPs, no advertising or profiling, and how to withdraw consent." />
+  <link rel="canonical" href="https://andreclaudino.com/privacy.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0b0b0f" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("ac-theme");
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="/" aria-label="André Claudino, home">
+        <span class="brand__mark">AC</span>
+        <span class="brand__name">André Claudino</span>
+      </a>
+      <a class="nav__link" href="/">← Back to site</a>
+    </div>
+  </header>
+
+  <main class="container legal">
+    <h1>Privacy &amp; cookies</h1>
+    <p class="legal__lead">Short version: this site uses Google Analytics only after you accept it, collects no advertising data and never sells anything about you.</p>
+
+    <h2>Who is responsible</h2>
+    <p>André Claudino, contactable at <a href="mailto:claudino@d2x.com.br">claudino@d2x.com.br</a>.</p>
+
+    <h2>What is measured</h2>
+    <p>When you accept analytics cookies, the site loads Google Analytics 4 (Google Ireland Ltd.) and records:</p>
+    <ul>
+      <li>pages and sections viewed, plus scroll and referral source;</li>
+      <li>clicks on outbound links (GitHub, LinkedIn, Medium) and on the email link;</li>
+      <li>approximate location derived from a truncated IP address, device type, browser and language.</li>
+    </ul>
+    <p>IP anonymisation is on, advertising signals are off, and Google Signals and ad personalisation are not used. No data is sold or shared for advertising.</p>
+
+    <h2>Cookies</h2>
+    <ul>
+      <li><code>_ga</code>, <code>_ga_&lt;id&gt;</code> — Google Analytics, used to distinguish visits. Lifetime: up to 2 years.</li>
+      <li><code>ac-consent</code>, <code>ac-theme</code> — stored locally in your browser, not sent anywhere, to remember your choice and your light/dark preference.</li>
+    </ul>
+
+    <h2>Consent and how to withdraw it</h2>
+    <p>The site ships with Google Consent Mode v2 and every category set to <em>denied</em>. The analytics script is only downloaded after you press <em>Accept</em>. You can change your mind at any time:</p>
+    <p><button type="button" class="btn btn--primary" id="reset-consent">Reset my cookie choice</button> <span id="reset-status" class="legal__status"></span></p>
+    <p>You can also block or delete cookies in your browser settings, or install the <a href="https://tools.google.com/dlpage/gaoptout" rel="noopener" target="_blank">Google Analytics opt-out add-on</a>.</p>
+
+    <h2>Legal basis and your rights</h2>
+    <p>Analytics processing relies on your consent (GDPR Art. 6(1)(a), LGPD Art. 7, I). You may request access, correction, deletion or portability of your data, or object to processing, by email at the address above. Data is processed by Google as a processor and may be transferred outside Brazil/EU under the safeguards described in Google's data processing terms.</p>
+    <p>Google Analytics retains event data for 14 months.</p>
+
+    <p class="legal__updated">Last updated: 3 November 2026.</p>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year">2026</span> André Claudino · AI/ML Engineer</span>
+      <span class="footer__links">
+        <a href="/">Home</a>
+        <a href="https://github.com/andreclaudino" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/andreclaudino" target="_blank" rel="noopener">LinkedIn</a>
+      </span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("reset-consent").addEventListener("click", function () {
+      try { localStorage.removeItem("ac-consent"); } catch (e) {}
+      document.getElementById("reset-status").textContent = "Cleared — the banner will ask again on your next visit.";
+    });
+  </script>
+</body>
+</html>

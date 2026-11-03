@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page not found · André Claudino</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link rel="stylesheet" href="/assets/site.css" />
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("ac-theme");
+        if (t !== "light" && t !== "dark") {
+          t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="/" aria-label="André Claudino, home">
+        <span class="brand__mark">AC</span>
+        <span class="brand__name">André Claudino</span>
+      </a>
+      <a class="nav__link" href="/">← Home</a>
+    </div>
+  </header>
+
+  <main class="container error-page">
+    <div>
+      <p class="error-page__code">404</p>
+      <h1>This page moved, or never existed.</h1>
+      <p class="legal__lead">Everything worth reading lives on the home page: experience, open-source projects and articles.</p>
+      <p style="margin-top:24px"><a class="btn btn--primary" href="/">Back to andreclaudino.com</a></p>
+    </div>
+  </main>
+</body>
+</html>
