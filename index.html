@@ -1315,10 +1315,22 @@ html[data-theme="dark"] .project__link {
         "@id": "https://andreclaudino.com/#articles",
         "name": "Articles by André Claudino",
         "itemListOrder": "https://schema.org/ItemListOrderDescending",
-        "numberOfItems": 7,
+        "numberOfItems": 8,
         "itemListElement": [
           {
             "@type": "ListItem", "position": 1,
+            "item": {
+              "@type": "BlogPosting",
+              "headline": "Small Language Models: Fine-Tuning the Work That Never Needed a Frontier Model",
+              "datePublished": "2026-11",
+              "inLanguage": "en",
+              "author": { "@id": "https://andreclaudino.com/#person" },
+              "url": "https://www.linkedin.com/pulse/small-language-models-fine-tuning-work-never-needed-model-claudino-ippqf/",
+              "sameAs": "https://medium.com/@andrelgcclaudino/small-language-models-fine-tuning-the-work-that-never-needed-a-frontier-model-d374a1609376"
+            }
+          },
+          {
+            "@type": "ListItem", "position": 2,
             "item": {
               "@type": "BlogPosting",
               "headline": "Model Registry & Lineage: The Control Plane for Shipping Models",
@@ -1330,7 +1342,7 @@ html[data-theme="dark"] .project__link {
             }
           },
           {
-            "@type": "ListItem", "position": 2,
+            "@type": "ListItem", "position": 3,
             "item": {
               "@type": "BlogPosting",
               "headline": "ML Cost Optimization: The FinOps Levers That Actually Move the Bill",
@@ -1341,7 +1353,7 @@ html[data-theme="dark"] .project__link {
             }
           },
           {
-            "@type": "ListItem", "position": 3,
+            "@type": "ListItem", "position": 4,
             "item": {
               "@type": "BlogPosting",
               "headline": "AIOps Observability: Making AI Systems Explain Themselves in Production",
@@ -1352,7 +1364,7 @@ html[data-theme="dark"] .project__link {
             }
           },
           {
-            "@type": "ListItem", "position": 4,
+            "@type": "ListItem", "position": 5,
             "item": {
               "@type": "BlogPosting",
               "headline": "Kubernetes ML Platform: Orchestration Patterns That Keep the Bill Down",
@@ -1363,7 +1375,7 @@ html[data-theme="dark"] .project__link {
             }
           },
           {
-            "@type": "ListItem", "position": 5,
+            "@type": "ListItem", "position": 6,
             "item": {
               "@type": "BlogPosting",
               "headline": "LLM Agents in Production: Evals, Cost, and the Failure Modes Nobody Demos",
@@ -1374,7 +1386,7 @@ html[data-theme="dark"] .project__link {
             }
           },
           {
-            "@type": "ListItem", "position": 6,
+            "@type": "ListItem", "position": 7,
             "item": {
               "@type": "BlogPosting",
               "headline": "Rust for Machine Learning: Why It's Time (and Where It Wins)",
@@ -1385,7 +1397,7 @@ html[data-theme="dark"] .project__link {
             }
           },
           {
-            "@type": "ListItem", "position": 7,
+            "@type": "ListItem", "position": 8,
             "item": {
               "@type": "BlogPosting",
               "headline": "The MLOps Production Checklist: What an MLOps Engineer Actually Ships",
@@ -2121,6 +2133,12 @@ flowchart LR
 
       <div class="grid grid--2" style="margin-top:26px">
         <article class="card">
+          <span class="card__icon">🎛️</span>
+          <h3 class="card__title">Small Language Models: Fine-Tuning the Work That Never Needed a Frontier Model</h3>
+          <p>Most production LLM traffic is narrow: classification, extraction, summarization, routing. Why specialists win on cost and latency, how to draw a task boundary, the data work that decides whether fine-tuning pays off, LoRA/PEFT loops, evals beyond loss, and serving plus routing.</p>
+          <p><a href="https://www.linkedin.com/pulse/small-language-models-fine-tuning-work-never-needed-model-claudino-ippqf/" target="_blank" rel="noopener">LinkedIn Pulse ↗</a> · <a href="https://medium.com/@andrelgcclaudino/small-language-models-fine-tuning-the-work-that-never-needed-a-frontier-model-d374a1609376" target="_blank" rel="noopener">Medium ↗</a> · Nov 2026</p>
+        </article>
+        <article class="card">
           <span class="card__icon">🔎</span>
           <h3 class="card__title">RAG in Production: Retrieval Is Data Engineering, Not a Prompt Trick</h3>
           <p>The answer can never be better than the retrieval that fed it. Golden sets and Recall@K, structure-aware chunking, reranking, grounding and citation checks, retrieval evals that gate deploys, plus the freshness and permissions nobody wants to own.</p>
@@ -2252,7 +2270,7 @@ flowchart LR
 
   <footer class="footer">
     <div class="container footer__inner">
-      <span>© <span id="year">2026</span> André Claudino · AI/ML Engineer <span class="footer__build">build 2026-11-16a</span></span>
+      <span>© <span id="year">2026</span> André Claudino · AI/ML Engineer <span class="footer__build">build 2026-11-17a</span></span>
       <span class="footer__links">
         <a href="https://github.com/andreclaudino" target="_blank" rel="noopener">GitHub</a>
         <a href="https://github.com/neurono-ml" target="_blank" rel="noopener">neurono-ml</a>
