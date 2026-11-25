@@ -1315,10 +1315,22 @@ html[data-theme="dark"] .project__link {
         "@id": "https://andreclaudino.com/#articles",
         "name": "Articles by André Claudino",
         "itemListOrder": "https://schema.org/ItemListOrderDescending",
-        "numberOfItems": 10,
+        "numberOfItems": 11,
         "itemListElement": [
           {
             "@type": "ListItem", "position": 1,
+            "item": {
+              "@type": "BlogPosting",
+              "headline": "GTA 6 Is CPU-Bound. LLMs Are GPU-Bound. Both Are Wrong About Inference.",
+              "datePublished": "2026-11",
+              "inLanguage": "en",
+              "author": { "@id": "https://andreclaudino.com/#person" },
+              "url": "https://www.linkedin.com/pulse/gta-6-cpu-bound-llms-gpu-bound-both-wrong-inference-andr%25C3%25A9-claudino-nu4wf/",
+              "sameAs": "https://medium.com/@andrelgcclaudino/gta-6-cpus-and-gpus-why-training-needs-a-gpu-but-inference-often-doesnt-c11fb24df0af"
+            }
+          },
+          {
+            "@type": "ListItem", "position": 2,
             "item": {
               "@type": "BlogPosting",
               "headline": "Real-Time Feature Engineering in a Lakehouse: Consistency, Freshness and Cost",
@@ -1330,7 +1342,7 @@ html[data-theme="dark"] .project__link {
             }
           },
           {
-            "@type": "ListItem", "position": 2,
+            "@type": "ListItem", "position": 3,
             "item": {
               "@type": "BlogPosting",
               "headline": "Kubernetes GPU Autoscaling: Getting the Right Accelerator at the Right Time",
@@ -1342,7 +1354,7 @@ html[data-theme="dark"] .project__link {
             }
           },
           {
-            "@type": "ListItem", "position": 3,
+            "@type": "ListItem", "position": 4,
             "item": {
               "@type": "BlogPosting",
               "headline": "Small Language Models: Fine-Tuning the Work That Never Needed a Frontier Model",
@@ -1354,7 +1366,7 @@ html[data-theme="dark"] .project__link {
             }
           },
           {
-            "@type": "ListItem", "position": 4,
+            "@type": "ListItem", "position": 5,
             "item": {
               "@type": "BlogPosting",
               "headline": "Model Registry & Lineage: The Control Plane for Shipping Models",
@@ -1366,7 +1378,7 @@ html[data-theme="dark"] .project__link {
             }
           },
           {
-            "@type": "ListItem", "position": 5,
+            "@type": "ListItem", "position": 6,
             "item": {
               "@type": "BlogPosting",
               "headline": "ML Cost Optimization: The FinOps Levers That Actually Move the Bill",
@@ -1377,7 +1389,7 @@ html[data-theme="dark"] .project__link {
             }
           },
           {
-            "@type": "ListItem", "position": 6,
+            "@type": "ListItem", "position": 7,
             "item": {
               "@type": "BlogPosting",
               "headline": "AIOps Observability: Making AI Systems Explain Themselves in Production",
@@ -1388,7 +1400,7 @@ html[data-theme="dark"] .project__link {
             }
           },
           {
-            "@type": "ListItem", "position": 7,
+            "@type": "ListItem", "position": 8,
             "item": {
               "@type": "BlogPosting",
               "headline": "Kubernetes ML Platform: Orchestration Patterns That Keep the Bill Down",
@@ -1399,7 +1411,7 @@ html[data-theme="dark"] .project__link {
             }
           },
           {
-            "@type": "ListItem", "position": 8,
+            "@type": "ListItem", "position": 9,
             "item": {
               "@type": "BlogPosting",
               "headline": "LLM Agents in Production: Evals, Cost, and the Failure Modes Nobody Demos",
@@ -1410,7 +1422,7 @@ html[data-theme="dark"] .project__link {
             }
           },
           {
-            "@type": "ListItem", "position": 9,
+            "@type": "ListItem", "position": 10,
             "item": {
               "@type": "BlogPosting",
               "headline": "Rust for Machine Learning: Why It's Time (and Where It Wins)",
@@ -1421,7 +1433,7 @@ html[data-theme="dark"] .project__link {
             }
           },
           {
-            "@type": "ListItem", "position": 10,
+            "@type": "ListItem", "position": 11,
             "item": {
               "@type": "BlogPosting",
               "headline": "The MLOps Production Checklist: What an MLOps Engineer Actually Ships",
@@ -2157,6 +2169,12 @@ flowchart LR
 
       <div class="grid grid--2" style="margin-top:26px">
         <article class="card">
+          <span class="card__icon">🎮</span>
+          <h3 class="card__title">GTA 6 Is CPU-Bound. LLMs Are GPU-Bound. Both Are Wrong About Inference.</h3>
+          <p>A game that sold US$ 3.79B on day one runs at 30 FPS because its CPU — not its GPU — ran out of time. The same mistake happens in ML teams buying bigger GPUs for memory-bound decode. From frame budgets and NPC queues to rooflines, KV-cache math and arithmetic intensity: how to choose hardware by the bottleneck you measured, not the one you imagined.</p>
+          <p><a href="https://www.linkedin.com/pulse/gta-6-cpu-bound-llms-gpu-bound-both-wrong-inference-andr%25C3%25A9-claudino-nu4wf/" target="_blank" rel="noopener">LinkedIn Pulse ↗</a> · <a href="https://medium.com/@andrelgcclaudino/gta-6-cpus-and-gpus-why-training-needs-a-gpu-but-inference-often-doesnt-c11fb24df0af" target="_blank" rel="noopener">Medium ↗</a> · Nov 2026</p>
+        </article>
+        <article class="card">
           <span class="card__icon">🌊</span>
           <h3 class="card__title">Real-Time Feature Engineering in a Lakehouse: Consistency, Freshness and Cost</h3>
           <p>Train/serve skew is the silent bug of real-time ML: the offline model that scored well and the online one that meets customers are two different models. The fix is consistency engineering — event time versus processing time, watermarks, one definition materialized twice, streaming ingest into the lakehouse through a broker, feature freshness as a cost dial, and feature stores that serve, version and trace every value.</p>
@@ -2306,7 +2324,7 @@ flowchart LR
 
   <footer class="footer">
     <div class="container footer__inner">
-      <span>© <span id="year">2026</span> André Claudino · AI/ML Engineer <span class="footer__build">build 2026-11-23a</span></span>
+      <span>© <span id="year">2026</span> André Claudino · AI/ML Engineer <span class="footer__build">build 2026-11-25a</span></span>
       <span class="footer__links">
         <a href="https://github.com/andreclaudino" target="_blank" rel="noopener">GitHub</a>
         <a href="https://github.com/neurono-ml" target="_blank" rel="noopener">neurono-ml</a>
